@@ -1,11 +1,16 @@
-# EssentialsLab
+# My Learn
+
+
+ng generate component drop-zone
+
+
+
+
+
+
+# ComponentLab
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
-
-# Learn
-
-
-
 
 ## Development server
 
@@ -30,13 +35,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-ng generate service todolist
-ng generate component SignUp
-ng generate component childTable
-ng generate component eventHanding
-ng generate service sumService
-
-### Question
-
-what is mean of "standalone: true"?

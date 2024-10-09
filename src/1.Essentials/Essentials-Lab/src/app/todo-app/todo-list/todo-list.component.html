@@ -1,1 +1,9 @@
 <p>todo-list works!</p>
+<div>
+    <p>Display task: {{taskTitle}} </p>
+    <form action="/action_page.php">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" (onchange)="updateStatusClick()" value="John"><br>
+        <input type="submit" [disabled]="formIsInvalid" value="Submit">
+      </form> 
+</div>

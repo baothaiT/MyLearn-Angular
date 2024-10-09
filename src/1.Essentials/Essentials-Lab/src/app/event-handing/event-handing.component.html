@@ -1,0 +1,45 @@
+<div>
+    <h3>event-handing works!</h3>
+    <div>
+        <h4> Event: Click</h4>
+        <p> 
+            @if (messageEventClick === '') 
+            {
+                Change message when click on the button click
+            }
+            @else 
+            {
+                {{messageEventClick}}
+            }
+        </p>
+        <button (click)="onClick()"> Click Event </button>
+    </div>
+    <hr />
+    <div>
+        <h4> Event: Click</h4>
+        <p> 
+            @if (messageEventClick_SumService === 0) 
+            {
+                Event Sum
+            }
+            @else 
+            {
+                {{messageEventClick_SumService}}
+            }
+        </p>
+        <button (click)="onClick_SumService()"> Click Event Sum </button>
+    </div>
+    <hr />
+    <div>
+        <h4> Event: KeyUp</h4>
+        <p> Count: {{messageEventKeyup}}</p>
+        <input type="text" (keyup)="onKeyup($event)" />
+    </div>
+    <hr />
+    <div>
+        <h4> Event: Keydown</h4>
+        <p> Count: {{messageEventKeydown}}</p>
+        <input type="text" (keydown)="onKeydown($event)" />
+    </div>
+</div>
+
