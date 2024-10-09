@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { OutputFunctionParentComponent } from './5_OutputFunction/output-function-parent/output-function-parent.component';
+import { ParentContentProjectComponent } from './6_ContentProjectWithNgContent/parent-content-project/parent-content-project.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [OutputFunctionParentComponent],
+  imports: [ParentContentProjectComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
