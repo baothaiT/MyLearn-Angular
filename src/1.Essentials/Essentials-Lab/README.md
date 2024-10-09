@@ -37,6 +37,8 @@ ng generate component childTable
 ng generate component eventHanding
 ng generate service sumService
 
+ng generate component inputLab
+
 ### Question
 
 what is mean of "standalone: true"?
