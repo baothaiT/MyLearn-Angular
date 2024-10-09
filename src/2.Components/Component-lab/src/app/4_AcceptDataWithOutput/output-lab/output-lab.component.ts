@@ -14,6 +14,9 @@ export class OutputLabComponent {
   sum: number = 0;
   firstNumberString: string = '';
   secondNumberString: string = '';
+
+  resultMinus: number = 0;
+
   addItem(newItem: string) {
     this.items.push(newItem);
   }
@@ -28,5 +31,9 @@ export class OutputLabComponent {
   GetSecondNumber(value: string)
   {
     this.secondNumberString = value;
+  }
+  GetMinus(value: number)
+  {
+    this.resultMinus = value;
   }
 }

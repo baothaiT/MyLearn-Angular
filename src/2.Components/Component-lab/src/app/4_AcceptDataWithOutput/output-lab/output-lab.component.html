@@ -13,9 +13,13 @@
     <app-output-sum-lab (newItemEvent)="calculator($event)" 
     (newItemStringEventFirst)="GetFirstNumber($event)" 
     (newItemStringEventSecond)="GetSecondNumber($event)"
+    (minusResultEvent)="GetMinus($event)"
     > </app-output-sum-lab>
     <p>
         Result: {{sum}}
+    </p>
+    <p>
+        Result minus: {{resultMinus}}
     </p>
     <p>
         First Number: {{firstNumberString}}
