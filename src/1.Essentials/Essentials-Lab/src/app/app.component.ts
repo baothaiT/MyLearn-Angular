@@ -13,5 +13,5 @@ import { EventHandingComponent } from './event-handing/event-handing.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Essentials-Lab';
+  title = 'Angular-Learning';
 }

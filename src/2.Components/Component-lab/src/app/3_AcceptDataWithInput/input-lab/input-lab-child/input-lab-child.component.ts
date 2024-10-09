@@ -9,6 +9,6 @@ import { User } from './../../../../Shared/Interfaces/user.model';
   styleUrl: './input-lab-child.component.css'
 })
 export class InputLabChildComponent {
-  @Input() dataChild = '';
-  @Input() user!: User;
+  @Input({required: true}) dataChild = '';
+  @Input({required: true}) user!: User;
 }

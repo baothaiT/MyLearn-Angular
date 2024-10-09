@@ -1,0 +1,17 @@
+<p>output-lab works!</p>
+<div class="container">
+    <app-output-lab-child (newItemEvent)="addItem($event)"></app-output-lab-child>
+    <ul>
+        @for (item of items; track $index) {
+            <li>{{item}}</li>
+        }
+    </ul>
+</div>
+
+<div>
+    <h3>Output with sum</h3>
+    <app-output-sum-lab (newItemEvent)="calculator($event)"> </app-output-sum-lab>
+    <p>
+        Result: {{sum}}
+    </p>
+</div>

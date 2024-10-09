@@ -38,6 +38,7 @@ ng generate component eventHanding
 ng generate service sumService
 
 ng generate component inputLab
+ng generate component outputLab
 
 ### Question
 
