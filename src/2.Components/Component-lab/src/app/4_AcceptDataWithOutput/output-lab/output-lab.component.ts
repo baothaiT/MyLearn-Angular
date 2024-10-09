@@ -12,11 +12,21 @@ import { OutputSumLabComponent } from './output-sum-lab/output-sum-lab.component
 export class OutputLabComponent {
   items = ['item1', 'item2', 'item3', 'item4'];
   sum: number = 0;
+  firstNumberString: string = '';
+  secondNumberString: string = '';
   addItem(newItem: string) {
     this.items.push(newItem);
   }
   calculator(value: number)
   {
     this.sum = value;
+  }
+  GetFirstNumber(value: string)
+  {
+    this.firstNumberString = value;
+  }
+  GetSecondNumber(value: string)
+  {
+    this.secondNumberString = value;
   }
 }

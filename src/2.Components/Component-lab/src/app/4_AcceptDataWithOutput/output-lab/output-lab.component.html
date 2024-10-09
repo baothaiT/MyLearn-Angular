@@ -10,8 +10,17 @@
 
 <div>
     <h3>Output with sum</h3>
-    <app-output-sum-lab (newItemEvent)="calculator($event)"> </app-output-sum-lab>
+    <app-output-sum-lab (newItemEvent)="calculator($event)" 
+    (newItemStringEventFirst)="GetFirstNumber($event)" 
+    (newItemStringEventSecond)="GetSecondNumber($event)"
+    > </app-output-sum-lab>
     <p>
         Result: {{sum}}
+    </p>
+    <p>
+        First Number: {{firstNumberString}}
+    </p>
+    <p>
+        Second Number: {{secondNumberString}}
     </p>
 </div>

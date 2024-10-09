@@ -9,6 +9,8 @@ import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
 })
 export class OutputSumLabComponent {
   @Output() newItemEvent = new EventEmitter<number>();
+  @Output() newItemStringEventFirst = new EventEmitter<string>();
+  @Output() newItemStringEventSecond = new EventEmitter<string>();
 
   constructor() { }
 
@@ -17,6 +19,8 @@ export class OutputSumLabComponent {
   }
 
   caculatorSum(valueA: string, valueB: string) {
-      this.newItemEvent.emit(Number(valueA) + Number(valueB));
+    this.newItemEvent.emit(Number(valueA) + Number(valueB));
+    this.newItemStringEventFirst.emit(valueA);
+    this.newItemStringEventSecond.emit(valueB);
   }
 }
