@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="side">
+      <app-about-me></app-about-me>
+      <app-blog-lastest></app-blog-lastest>
+    </div>
+    <div class="main">
+      @for (item of items; track $index; let i = $index) 
+      {
+        <app-item-blog [title]="item.name" [img] = "item.img"></app-item-blog>
+        <br>
+      }
+    </div>
+</div>
