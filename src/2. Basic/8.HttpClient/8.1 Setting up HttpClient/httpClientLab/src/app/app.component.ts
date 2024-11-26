@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HttpclientService } from './shared/services/httpclient.service';
+import { LogInterface } from './shared/interfaces/log-interface';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +10,67 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  logs: LogInterface[] = [];
+  isLoading: boolean = false;
+  errorMessage: string | null = null;
+
+  newLog: LogInterface = {
+    id: '3fa85f64-5717-4562-b3fc-2c963f66afa6', // Use a UUID or let the backend generate it if needed
+    startDateTime: new Date().toISOString(), // Default to the current datetime
+    componentName: 'string',
+    code: 200,
+    message: 'string'
+  };
+
+  successMessage: string | null = null;
+
+  constructor(private httpService: HttpclientService)
+  {
+
+  }
   title = 'httpClientLab';
+
+  GetLog()
+  {
+    this.fetchLogs();
+  }
+  ngOnInit(): void {
+    this.fetchLogs();
+  }
+
+  /**
+   * Fetch logs from the service and handle loading and errors.
+   */
+  fetchLogs(): void {
+    this.isLoading = true;
+    this.errorMessage = null;
+
+    this.httpService.getLogs().subscribe({
+      next: (logs: LogInterface[]) => {
+        this.logs = logs;
+        this.isLoading = false;
+      },
+      error: (error: any) => {
+        this.errorMessage = 'Failed to load logs. Please try again later.';
+        this.isLoading = false;
+      }
+    });
+  }
+
+  submitLog(): void {
+    this.successMessage = null;
+    this.errorMessage = null;
+
+    this.httpService.createLogs(this.newLog).subscribe({
+      next: (createdLog) => {
+        // this.successMessage = `Log created successfully with ID: ${createdLog.id}`;
+        this.fetchLogs();
+      },
+      error: (error) => {
+        this.errorMessage = 'Failed to create log. Please try again.';
+        console.error(error);
+      }
+    });
+  }
 }
