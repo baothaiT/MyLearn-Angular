@@ -14,34 +14,23 @@ export class AppComponent implements OnInit {
   logs: LogInterface[] = [];
   isLoading: boolean = false;
   errorMessage: string | null = null;
+  successMessage: string | null = null;
 
   newLog: LogInterface = {
     id: '3fa85f64-5717-4562-b3fc-2c963f66afa6', // Use a UUID or let the backend generate it if needed
     startDateTime: new Date().toISOString(), // Default to the current datetime
-    componentName: 'string',
+    componentName: 'Admin UI',
     code: 200,
     message: 'string'
   };
 
-  successMessage: string | null = null;
-
-  constructor(private httpService: HttpclientService)
-  {
-
-  }
+  constructor(private httpService: HttpclientService) {}
   title = 'httpClientLab';
 
-  GetLog()
-  {
-    this.fetchLogs();
-  }
   ngOnInit(): void {
     this.fetchLogs();
   }
 
-  /**
-   * Fetch logs from the service and handle loading and errors.
-   */
   fetchLogs(): void {
     this.isLoading = true;
     this.errorMessage = null;

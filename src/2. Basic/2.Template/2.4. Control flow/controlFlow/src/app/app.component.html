@@ -1,0 +1,16 @@
+<button (click)="change()"> Change</button>
+
+@if (isloading) {
+  <p> Loading...</p>
+}
+@else {
+  <p> No Loading...</p>
+}
+
+@for (item of items; track $index) 
+{
+  <p> Name: {{item.Name}}</p>
+  <p> Description: {{item.Description}}</p>
+}
+
+<router-outlet />
